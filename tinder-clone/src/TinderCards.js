@@ -4,19 +4,7 @@ import "./TinderCards.css";
 
 function TinderCards() {
     const [people, setPeople] = useState([
-    // const people = useState([
-        {
-            name: 'Nick Minaj',
-            url: "https://www.aceshowbiz.com/images/wennpic/nicki-minaj-24th-annual-amfar-fundraiser-01.jpg"
-        },
-        {
-            name: 'Cardi B',
-            url: "https://www.aceshowbiz.com/images/wennpic/nicki-minaj-24th-annual-amfar-fundraiser-01.jpg"
-        },
-        {
-            name: 'Rihanna',
-            url: "https://www.aceshowbiz.com/images/wennpic/nicki-minaj-24th-annual-amfar-fundraiser-01.jpg"
-        }
+      
     ]);
 
     const swiped = (direction, nameToDelete) => {
