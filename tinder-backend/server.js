@@ -1,21 +1,21 @@
 import express from "express";
 import mongoose from "mongoose";
-import Cards from "./dbCards"
+import Cards from "./dbCards.js"
+
 
 // App Config
 const app = express();
 const port = process.env.PORT || 8000;
-// const password = '0oXIyj7SjtmLAajR'
-// const connection_url = `mongodb+srv://admin:${password}@cluster0.6a5gime.mongodb.net/?retryWrites=true&w=majority`;
+const connection_url = 'mongodb+srv://admin:0oXIyj7SjtmLAajR@cluster0.6a5gime.mongodb.net/?retryWrites=true&w=majority';
 
 // Middleware
 
 // DB Config
-// mongoose.connect(connection_url, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useUnifiedTopology: true,
-// });
+mongoose.connect(connection_url, {
+    useNewUrlParser: true,
+    // useCreateIndex: true,
+    useUnifiedTopology: true,
+});
 
 // API Endpoints
 app.get('/', (req,res) => {
