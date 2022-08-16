@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import "./TinderCards.css";
+import axios from "./axios.js"
 
 function TinderCards() {
-    const [people, setPeople] = useState([
-      
-    ]);
+    const [people, setPeople] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const req = await axios.get('/tinder/cards');
+
+            setPeople(req.data);
+        }
+
+        fetchData();
+    }, [])
 
     const swiped = (direction, nameToDelete) => {
         console.log("removing: " + nameToDelete);
