@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import Cards from "./dbCards.js"
+import Cors from "cors";
 
 
 // App Config
@@ -9,6 +10,8 @@ const port = process.env.PORT || 8000;
 const connection_url = 'mongodb+srv://admin:0oXIyj7SjtmLAajR@cluster0.6a5gime.mongodb.net/?retryWrites=true&w=majority';
 
 // Middleware
+app.use(express.json())
+app.use(Cors())
 
 // DB Config
 mongoose.connect(connection_url, {
